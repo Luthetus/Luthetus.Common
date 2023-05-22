@@ -1,4 +1,4 @@
-﻿window.luthetus.common = {
+﻿window.luthetusCommon = {
     localStorageSetItem: function (key, value) {
         localStorage.setItem(key, value);
     },

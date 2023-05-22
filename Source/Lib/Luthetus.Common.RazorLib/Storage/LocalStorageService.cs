@@ -18,7 +18,7 @@ public class LocalStorageService : IStorageService
     public async ValueTask SetValue(string key, object? value)
     {
         await _jsRuntime.InvokeVoidAsync(
-            "luthetus.common.localStorageSetItem",
+            "luthetusCommon.localStorageSetItem",
             key,
             value);
     }
@@ -26,7 +26,7 @@ public class LocalStorageService : IStorageService
     public async ValueTask<object?> GetValue(string key)
     {
         return await _jsRuntime.InvokeAsync<string>(
-            "luthetus.common.localStorageGetItem",
+            "luthetusCommon.localStorageGetItem",
             key);
     }
 }

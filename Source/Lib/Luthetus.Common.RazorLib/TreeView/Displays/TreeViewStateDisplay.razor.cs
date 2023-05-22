@@ -145,7 +145,7 @@ public partial class TreeViewStateDisplay : FluxorComponent
 
             contextMenuFixedPosition = await JsRuntime
                 .InvokeAsync<ContextMenuFixedPosition>(
-                    "luthetus.common.getTreeViewContextMenuFixedPosition",
+                    "luthetusCommon.getTreeViewContextMenuFixedPosition",
                     TreeViewService.GetTreeContainerElementId(treeViewState.TreeViewStateKey),
                     TreeViewService.GetNodeElementId(
                         treeViewState.ActiveNode));
