@@ -1,6 +1,4 @@
-﻿using Luthetus.Common.RazorLib;
-
-namespace Luthetus.Common.RazorLib.Storage;
+﻿namespace Luthetus.Common.RazorLib.Storage;
 
 public interface IStorageService : ILuthetusCommonService
 {

@@ -1,6 +1,6 @@
 ﻿@using Luthetus.Common.RazorLib.Theme
 
-<div class="bcrl_settings-input bcrl_input-app-options-theme @CssClassString"
+<div class="luth_settings-input luth_input-app-options-theme @CssClassString"
      style="@CssStyleString">
     @{
         var themeState = ThemeRecordsCollectionService.ThemeRecordsCollectionWrap.Value;
@@ -14,7 +14,7 @@
     
     Theme:&nbsp;
     
-    <select @onchange="OnThemeSelectChanged" class="bcrl_select">
+    <select @onchange="OnThemeSelectChanged" class="luth_select">
         
         <option value="@Guid.Empty.ToString()"
                 selected="@CheckIsActiveValid(

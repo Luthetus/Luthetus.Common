@@ -1,11 +1,11 @@
 ﻿@using System.Collections.Immutable
 @using Luthetus.Common.RazorLib.Dimensions
 
-<div class="bcrl_tree-view">
+<div class="luth_tree-view">
     @if (!TreeViewNoType.IsHidden)
     {
         <div id="@TreeViewService.GetNodeElementId(TreeViewNoType)"
-             class="bcrl_tree-view-title @IsSelectedCssClass @IsActiveCssClass"
+             class="luth_tree-view-title @IsSelectedCssClass @IsActiveCssClass"
              style="padding-left: @(OffsetInPixels.ToCssValue())px;"
              tabindex="-1"
              @onclick:stopPropagation="true"
@@ -20,7 +20,7 @@
              @onkeydown="e => HandleOnKeyDown(e, TreeViewState, TreeViewNoType)"
              @ref="_treeViewTitleElementReference">
             
-            <div class="bcrl_tree-view-expansion-chevron"
+            <div class="luth_tree-view-expansion-chevron"
                  @onclick:stopPropagation="true"
                  @onmousedown:stopPropagation="true"
                  @onmousedown="_ => HandleExpansionChevronOnMouseDown(TreeViewNoType)">
@@ -42,7 +42,7 @@
                 }
             </div>
 
-            <div class="bcrl_tree-view-title-content"
+            <div class="luth_tree-view-title-content"
                  style="width: calc(100% - @(WidthOfTitleExpansionChevron.ToCssValue())px); height:  100%;">
                 @{
                     var treeViewRenderer = TreeViewNoType
@@ -55,7 +55,7 @@
     }
 
     @if (TreeViewNoType.IsExpanded) {
-        <div class="bcrl_tree-view-children">
+        <div class="luth_tree-view-children">
             @foreach (var child in TreeViewNoType.Children)
             {
                 <TreeViewDisplay TreeViewNoType="child"
@@ -65,7 +65,7 @@
             @if (!TreeViewNoType.IsHidden)
             {
                 <div style="margin-left: @((OffsetInPixels + WidthOfTitleExpansionChevron / 2).ToCssValue())px;"
-                     class="bcrl_tree-view-children-border">
+                     class="luth_tree-view-children-border">
                 </div>
             }
         </div>

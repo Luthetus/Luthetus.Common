@@ -1,6 +1,4 @@
-﻿using Luthetus.Common.RazorLib;
-
-namespace Luthetus.Common.RazorLib.Clipboard;
+﻿namespace Luthetus.Common.RazorLib.Clipboard;
 
 public interface IClipboardService : ILuthetusCommonService
 {

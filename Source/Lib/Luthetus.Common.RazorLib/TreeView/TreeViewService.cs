@@ -231,13 +231,13 @@ public class TreeViewService : ITreeViewService
     public string GetNodeElementId(
         TreeViewNoType treeViewNoType)
     {
-        return $"bcrl_node-{treeViewNoType.TreeViewNodeKey}";
+        return $"luth_node-{treeViewNoType.TreeViewNodeKey}";
     }
 
     public string GetTreeContainerElementId(
         TreeViewStateKey treeViewStateKey)
     {
-        return $"bcrl_tree-container-{treeViewStateKey.Guid}";
+        return $"luth_tree-container-{treeViewStateKey.Guid}";
     }
 
     public void DisposeTreeViewState(TreeViewStateKey treeViewStateKey)

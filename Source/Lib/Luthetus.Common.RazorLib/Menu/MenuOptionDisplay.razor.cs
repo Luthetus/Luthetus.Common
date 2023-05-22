@@ -32,12 +32,12 @@ public partial class MenuOptionDisplay : ComponentBase
         .Any(x => x.Guid == _subMenuDropdownKey.Guid);
 
     private string IsActiveCssClass => IsActive
-        ? "bcrl_active"
+        ? "luth_active"
         : string.Empty;
 
     private string HasWidgetActiveCssClass => _shouldDisplayWidget &&
                                               MenuOptionRecord.WidgetRendererType is not null
-        ? "bcrl_active"
+        ? "luth_active"
         : string.Empty;
 
     private MenuOptionWidgetParameters MenuOptionWidgetParameters => new(
@@ -74,7 +74,7 @@ public partial class MenuOptionDisplay : ComponentBase
             {
                 await _menuOptionDisplayElementReference.Value.FocusAsync();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 // 2023-04-18: The app has had a bug where it "freezes" and must be restarted.
                 //             This bug is seemingly happening randomly. I have a suspicion
@@ -140,7 +140,7 @@ public partial class MenuOptionDisplay : ComponentBase
                 if (_menuOptionDisplayElementReference.HasValue)
                     await _menuOptionDisplayElementReference.Value.FocusAsync();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 // 2023-04-18: The app has had a bug where it "freezes" and must be restarted.
                 //             This bug is seemingly happening randomly. I have a suspicion

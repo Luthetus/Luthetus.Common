@@ -5,7 +5,7 @@
     var treeViewState = TreeViewStateContainerWrap.Value;
 
     <div id="@TreeViewService.GetTreeContainerElementId(treeViewState?.TreeViewStateKey ?? TreeViewStateKey.Empty)"
-         class="bcrl_tree-view-state bcrl_unselectable @GetHasActiveNodeCssClass(treeViewState) @CssClassString"
+         class="luth_tree-view-state luth_unselectable @GetHasActiveNodeCssClass(treeViewState) @CssClassString"
          style="@CssStyleString"
          tabindex="0"
          @ref="_treeViewStateDisplayElementReference"
@@ -37,7 +37,7 @@
 @if (OnContextMenuRenderFragment is not null &&
      _treeViewContextMenuCommandParameter is not null)
 {
-    <div class="bcrl_context-menu bcrl_set-selectable"
+    <div class="luth_context-menu luth_set-selectable"
          style="@ContextMenuCssStyleString"
          @oncontextmenu:stopPropagation="true"
          @onmousedown:stopPropagation="true"

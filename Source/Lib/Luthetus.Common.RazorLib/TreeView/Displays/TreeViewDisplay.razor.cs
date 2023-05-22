@@ -1,5 +1,4 @@
 ﻿using Luthetus.Common.RazorLib.TreeView.Commands;
-using Luthetus.Common.RazorLib.TreeView;
 using Luthetus.Common.RazorLib.TreeView.Events;
 using Luthetus.Common.RazorLib.TreeView.TreeViewClasses;
 using Microsoft.AspNetCore.Components;
@@ -46,11 +45,11 @@ public partial class TreeViewDisplay : ComponentBase
                              TreeViewState.ActiveNode.TreeViewNodeKey == TreeViewNoType.TreeViewNodeKey;
 
     private string IsSelectedCssClass => IsSelected
-        ? "bcrl_selected"
+        ? "luth_selected"
         : string.Empty;
 
     private string IsActiveCssClass => IsActive
-        ? "bcrl_active"
+        ? "luth_active"
         : string.Empty;
 
     protected override bool ShouldRender()
@@ -91,7 +90,7 @@ public partial class TreeViewDisplay : ComponentBase
             if (localTreeViewTitleElementReference is not null)
                 await localTreeViewTitleElementReference.Value.FocusAsync();
         }
-        catch (Exception e)
+        catch (Exception)
         {
             // 2023-04-18: The app has had a bug where it "freezes" and must be restarted.
             //             This bug is seemingly happening randomly. I have a suspicion

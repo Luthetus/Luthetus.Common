@@ -12,11 +12,11 @@ public partial class TreeViewReflectionDisplay : ComponentBase
     {
         if (itemType == typeof(string))
         {
-            return "bte_string-literal";
+            return "luth_te_string-literal";
         }
         else if (itemType == typeof(bool))
         {
-            return "bte_keyword";
+            return "luth_te_keyword";
         }
         else
         {

@@ -1,7 +1,7 @@
 @using Luthetus.Common.RazorLib.Dropdown;
     using Luthetus.Common.RazorLib.Dropdown
 
-<div class="bcrl_menu-option-display bcrl_unselectable @IsActiveCssClass @HasWidgetActiveCssClass"
+<div class="luth_menu-option-display luth_unselectable @IsActiveCssClass @HasWidgetActiveCssClass"
      tabindex="-1"
      @ref="_menuOptionDisplayElementReference"
      @onclick="HandleOnClick"
@@ -26,7 +26,7 @@
                          DropdownPositionKind="DropdownPositionKind.Horizontal"
                          ShouldDisplayOutOfBoundsClickDisplay="false">
 
-            <div class="bcrl_dropdown-display-default-background">
+            <div class="luth_dropdown-display-default-background">
                 <MenuDisplay MenuRecord="MenuOptionRecord.SubMenu"/>
             </div>
         </DropdownDisplay>
@@ -34,7 +34,7 @@
 
     @if (DisplayWidget)
     {
-        <div class="bcrl_menu-option-widget"
+        <div class="luth_menu-option-widget"
              @onclick:stopPropagation="true"
              @ondblclick:stopPropagation="true"
              @onkeydown:stopPropagation="true"

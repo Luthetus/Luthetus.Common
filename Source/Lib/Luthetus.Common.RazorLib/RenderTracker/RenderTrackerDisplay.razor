@@ -3,7 +3,7 @@
 
 @{ var renderTrackerState = RenderTrackerStateWrap.Value; }
 
-<div class="bcrl_render-tracker">
+<div class="luth_render-tracker">
 
     <div>
         <span>
@@ -18,12 +18,12 @@
     {
         <div>
             <span @onclick="() => renderTrackerObject.ShowEntries = !renderTrackerObject.ShowEntries"
-                  class="bte_type"
+                  class="luth_te_type"
                   style="cursor: pointer;">
                 @renderTrackerObject.DisplayName
             </span>
 
-            <span class="bte_parameter">
+            <span class="luth_te_parameter">
                 RenderCount:&nbsp;@renderTrackerObject.RenderCount
             </span>
 
@@ -37,11 +37,11 @@
                         var dateTime = new DateTime(renderTrackerEntry.Ticks, dateTimeKind);
 
                         <li>
-                            <span class="bte_keyword">
+                            <span class="luth_te_keyword">
                                 @dateTime (@dateTimeKind)
                             </span>
                             -
-                            <span class="bte_string-literal">
+                            <span class="luth_te_string-literal">
                                 @renderTrackerEntry.Reason
                             </span>
                         </li>

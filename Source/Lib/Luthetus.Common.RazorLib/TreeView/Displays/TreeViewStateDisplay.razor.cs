@@ -4,7 +4,6 @@ using Fluxor;
 using Fluxor.Blazor.Web.Components;
 using Luthetus.Common.RazorLib.Dimensions;
 using Luthetus.Common.RazorLib.JavaScriptObjects;
-using Luthetus.Common.RazorLib.TreeView.Commands;
 using Luthetus.Common.RazorLib.TreeView.Events;
 using Luthetus.Common.RazorLib.TreeView.TreeViewClasses;
 using Microsoft.AspNetCore.Components;
@@ -104,7 +103,7 @@ public partial class TreeViewStateDisplay : FluxorComponent
                     if (localTreeViewStateDisplayElementReference.HasValue)
                         await localTreeViewStateDisplayElementReference.Value.FocusAsync();
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     // 2023-04-18: The app has had a bug where it "freezes" and must be restarted.
                     //             This bug is seemingly happening randomly. I have a suspicion
@@ -189,7 +188,7 @@ public partial class TreeViewStateDisplay : FluxorComponent
                     if (localTreeViewStateDisplayElementReference.HasValue)
                         await localTreeViewStateDisplayElementReference.Value.FocusAsync();
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     // 2023-04-18: The app has had a bug where it "freezes" and must be restarted.
                     //             This bug is seemingly happening randomly. I have a suspicion
@@ -215,7 +214,7 @@ public partial class TreeViewStateDisplay : FluxorComponent
             return string.Empty;
         }
 
-        return "bcrl_active";
+        return "luth_active";
     }
 
     private string GetContextMenuCssStyleString()

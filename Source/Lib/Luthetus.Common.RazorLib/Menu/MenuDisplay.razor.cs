@@ -50,7 +50,7 @@ public partial class MenuDisplay : ComponentBase
                 {
                     await _menuDisplayElementReference.Value.FocusAsync();
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     // 2023-04-18: The app has had a bug where it "freezes" and must be restarted.
                     //             This bug is seemingly happening randomly. I have a suspicion
@@ -83,7 +83,7 @@ public partial class MenuDisplay : ComponentBase
                 if (_menuDisplayElementReference is not null)
                     await _menuDisplayElementReference.Value.FocusAsync();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 // 2023-04-18: The app has had a bug where it "freezes" and must be restarted.
                 //             This bug is seemingly happening randomly. I have a suspicion

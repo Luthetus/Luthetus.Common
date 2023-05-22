@@ -4,12 +4,12 @@
         var textEditorDebugObjectWrap = TreeViewReflection.Item!;
     }
     
-    <div class="bte_keyword">
+    <div class="luth_te_keyword">
         @(textEditorDebugObjectWrap.IsPubliclyReadable ? "public" : "private")
         &nbsp;
     </div>
     
-    <div class="bte_type">
+    <div class="luth_te_type">
         @(textEditorDebugObjectWrap.DebugObjectItemType.Name)
         &nbsp;
     </div>
@@ -21,7 +21,7 @@
 
     @if (textEditorDebugObjectWrap.DebugObjectItem is null)
     {
-        <div class="bte_keyword">
+        <div class="luth_te_keyword">
             (null)
         </div>
     }

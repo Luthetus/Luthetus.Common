@@ -11,8 +11,8 @@
     height: 1em;
     margin: .2em;
     border-radius: 50%;
-    border: .15em solid var(--bcrl_primary-font-color);
-    border-color: var(--bcrl_primary-font-color) transparent var(--bcrl_primary-font-color) transparent;
+    border: .15em solid var(--luth_primary-font-color);
+    border-color: var(--luth_primary-font-color) transparent var(--luth_primary-font-color) transparent;
     animation: lds-dual-ring 1.2s linear infinite;
 }
 

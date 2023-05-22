@@ -1,6 +1,4 @@
-﻿using Luthetus.Common.RazorLib;
-
-namespace Luthetus.Common.RazorLib.Theme;
+﻿namespace Luthetus.Common.RazorLib.Theme;
 
 public interface IThemeService : ILuthetusCommonService
 {

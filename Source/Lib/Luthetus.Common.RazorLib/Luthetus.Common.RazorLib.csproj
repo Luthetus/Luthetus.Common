@@ -45,8 +45,4 @@
       <_ContentIncludedByDefault Remove="BackgroundTaskCase\BackgroundTaskDisplay.razor" />
     </ItemGroup>
 
-    <ItemGroup>
-      <None Include="wwwroot\luthetusTreeView.css" />
-    </ItemGroup>
-
 </Project>

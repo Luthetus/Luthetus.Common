@@ -1,22 +1,22 @@
-﻿.bcrl_menu-option-widget {
+﻿.luth_menu-option-widget {
     padding-bottom: 10px;
 }
 
-.bcrl_menu-option-display {
+.luth_menu-option-display {
     position: relative;
     white-space: nowrap;
     cursor: default;
-    padding: 0 var(--bcrl_menu-option-display-padding-width);
+    padding: 0 var(--luth_menu-option-display-padding-width);
 }
 
-.bcrl_menu-option-display.bcrl_active {
-    background-color: var(--bcrl_primary-hover-background-color);
+.luth_menu-option-display.luth_active {
+    background-color: var(--luth_primary-hover-background-color);
 }
 
-.bcrl_menu-option-display:hover {
-    background-color: var(--bcrl_primary-hover-background-color);
+.luth_menu-option-display:hover {
+    background-color: var(--luth_primary-hover-background-color);
 }
 
-.bcrl_menu-option-display:focus {
-    outline: solid var(--bcrl_menu-option-display-focus-outline-size) var(--bcrl_outline-with-focus-color);
+.luth_menu-option-display:focus {
+    outline: solid var(--luth_menu-option-display-focus-outline-size) var(--luth_outline-with-focus-color);
 }
