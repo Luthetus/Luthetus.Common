@@ -1,0 +1,11 @@
+﻿@{
+    var appOptionsState = AppOptionsService.AppOptionsStateWrap.Value;
+}
+
+<div class="bcrl_settings-input bcrl_input-app-options-font-family @CssClassString"
+     style="@CssStyleString">
+    
+    Font-Family:&nbsp;
+    <input class="bcrl_input"
+           @bind="FontFamily"/>
+</div>

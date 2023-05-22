@@ -1,0 +1,22 @@
+﻿.bcrl_menu-option-widget {
+    padding-bottom: 10px;
+}
+
+.bcrl_menu-option-display {
+    position: relative;
+    white-space: nowrap;
+    cursor: default;
+    padding: 0 var(--bcrl_menu-option-display-padding-width);
+}
+
+.bcrl_menu-option-display.bcrl_active {
+    background-color: var(--bcrl_primary-hover-background-color);
+}
+
+.bcrl_menu-option-display:hover {
+    background-color: var(--bcrl_primary-hover-background-color);
+}
+
+.bcrl_menu-option-display:focus {
+    outline: solid var(--bcrl_menu-option-display-focus-outline-size) var(--bcrl_outline-with-focus-color);
+}

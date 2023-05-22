@@ -1,0 +1,16 @@
+﻿.bcrl_tree-view-state {
+    height: 200px;
+    overflow: auto;
+}
+
+.bcrl_tree-view-state:focus-within .bcrl_tree-view-title.bcrl_selected {
+    background-color: var(--bcrl_active-with-focus-background-color);
+}
+
+.bcrl_tree-view-state:focus:not(.bcrl_active) {
+    outline: var(--bcrl_outline-with-focus-color) inset;
+}
+
+.bcrl_tree-view-state:focus .bcrl_tree-view-title.bcrl_active {
+    background-color: var(--bcrl_active-with-focus-background-color);
+}

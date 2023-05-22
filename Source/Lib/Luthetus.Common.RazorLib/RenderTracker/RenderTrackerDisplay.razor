@@ -1,0 +1,53 @@
+﻿@using Fluxor.Blazor.Web.Components;
+@inherits FluxorComponent
+
+@{ var renderTrackerState = RenderTrackerStateWrap.Value; }
+
+<div class="bcrl_render-tracker">
+
+    <div>
+        <span>
+            _numberOfEntriesToShow:&nbsp;
+        </span>
+
+        <input type="number"
+               @bind="_numberOfEntriesToShow" />
+    </div>
+
+    @foreach (var renderTrackerObject in renderTrackerState.Map.Values)
+    {
+        <div>
+            <span @onclick="() => renderTrackerObject.ShowEntries = !renderTrackerObject.ShowEntries"
+                  class="bte_type"
+                  style="cursor: pointer;">
+                @renderTrackerObject.DisplayName
+            </span>
+
+            <span class="bte_parameter">
+                RenderCount:&nbsp;@renderTrackerObject.RenderCount
+            </span>
+
+            @if (renderTrackerObject.ShowEntries)
+            {
+                var reversedRenderTrackerEntries = renderTrackerObject.RenderTrackerEntries.Reverse();
+                <ol>
+                    @foreach (var renderTrackerEntry in reversedRenderTrackerEntries.Take(_numberOfEntriesToShow))
+                    {
+                        var dateTimeKind = DateTimeKind.Utc;
+                        var dateTime = new DateTime(renderTrackerEntry.Ticks, dateTimeKind);
+
+                        <li>
+                            <span class="bte_keyword">
+                                @dateTime (@dateTimeKind)
+                            </span>
+                            -
+                            <span class="bte_string-literal">
+                                @renderTrackerEntry.Reason
+                            </span>
+                        </li>
+                    }
+                </ol>
+            }
+        </div>
+    }
+</div>

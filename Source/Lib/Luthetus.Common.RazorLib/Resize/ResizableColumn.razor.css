@@ -1,0 +1,5 @@
+﻿.bcrl_resize-column {
+    background-color: var(--bcrl_resize-column-background-color);
+    height: 100%;
+    cursor: e-resize;
+}

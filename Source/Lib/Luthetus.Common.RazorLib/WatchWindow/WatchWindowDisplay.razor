@@ -1,0 +1,20 @@
+﻿@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+@using Luthetus.Common.RazorLib.TreeView.Displays
+@using Luthetus.Common.RazorLib.Dropdown
+@using Luthetus.Common.RazorLib.TreeView.Events
+
+<div class="bcrl_debug-display">
+    <TreeViewStateDisplay TreeViewStateKey="WatchWindowDisplayTreeViewStateKey"
+                          CssStyleString="height: 100%;"
+                          OnContextMenuFunc="OnTreeViewContextMenuFunc"
+                          TreeViewMouseEventHandler="new TreeViewMouseEventHandler(TreeViewService)"
+                          TreeViewKeyboardEventHandler="new TreeViewKeyboardEventHandler(TreeViewService)"/>
+    
+    <DropdownDisplay DropdownKey="WatchWindowContextMenuDropdownKey"
+                     DropdownPositionKind="DropdownPositionKind.Unset"
+                     CssStyleString="@WatchWindowContextMenuDisplay.GetContextMenuCssStyleString(_mostRecentTreeViewContextMenuCommandParameter)">
+
+        <WatchWindowContextMenuDisplay TreeViewCommandParameter="_mostRecentTreeViewContextMenuCommandParameter"/>
+    </DropdownDisplay>
+</div>

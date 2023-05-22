@@ -1,0 +1,7 @@
+﻿.bcrl_dropdown-display {
+    z-index: var(--bcrl_dropdown-display-z-index);
+    position: absolute;
+    color: var(--bcrl_tertiary-foreground-color);
+    background-color: var(--bcrl_tertiary-background-color);
+    box-shadow: 0 0 var(--bcrl_dropdown-display-default-background-box-shadow-blur-radius) var(--bcrl_primary-box-shadow-color);
+}

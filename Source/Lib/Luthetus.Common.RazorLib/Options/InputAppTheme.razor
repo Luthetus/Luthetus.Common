@@ -1,0 +1,38 @@
+﻿@using Luthetus.Common.RazorLib.Theme
+
+<div class="bcrl_settings-input bcrl_input-app-options-theme @CssClassString"
+     style="@CssStyleString">
+    @{
+        var themeState = ThemeRecordsCollectionService.ThemeRecordsCollectionWrap.Value;
+        var applicationOptionsState = AppOptionsService.AppOptionsStateWrap.Value;
+
+        var themesInScope = themeState.ThemeRecordsList
+            .Where(x => 
+                x.ThemeScopes.Contains(ThemeScope.App))
+            .ToArray();
+    }
+    
+    Theme:&nbsp;
+    
+    <select @onchange="OnThemeSelectChanged" class="bcrl_select">
+        
+        <option value="@Guid.Empty.ToString()"
+                selected="@CheckIsActiveValid(
+                              themesInScope,
+                              applicationOptionsState.Options.ThemeKey
+                                ?? ThemeFacts.VisualStudioDarkThemeClone.ThemeKey)">
+            Select a Theme
+        </option>
+        
+        @foreach (var themeRecord in themesInScope)
+        {
+            <option value="@themeRecord.ThemeKey.Guid.ToString()"
+                    selected="@CheckIsActiveSelection(
+                                  themeRecord.ThemeKey,
+                                  applicationOptionsState.Options.ThemeKey
+                                    ?? ThemeFacts.VisualStudioDarkThemeClone.ThemeKey)">
+                @themeRecord.DisplayName
+            </option>
+        }
+    </select>
+</div>

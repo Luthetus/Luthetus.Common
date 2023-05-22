@@ -1,0 +1,54 @@
+@using Luthetus.Common.RazorLib.Resize
+
+<div class="bcrl_dialog-display @(DialogRecord.CssClassString ?? string.Empty)"
+     style="@ElementDimensionsStyleCssString @IsMaximizedStyleCssString">
+
+    @if (DialogRecord.IsResizable && !DialogRecord.IsMaximized)
+    {
+        <ResizableDisplay @ref="_resizableDisplay"
+                          ElementDimensions="DialogRecord.ElementDimensions"
+                          ReRenderFuncAsync="ReRenderAsync"/>
+    }
+
+    <div class="bcrl_dialog-display-toolbar"
+         @onmousedown="SubscribeMoveHandle">
+        <div class="bcrl_dialog-display-title bcrl_unselectable"
+             style="@DialogTitleCssStyleString"
+             title="@DialogRecord.Title">
+            @DialogRecord.Title
+        </div>
+
+        <div class="bcrl_dialog-display-buttons"
+             @onmousedown:stopPropagation="true">
+            
+            @if (DialogRecord.IsResizable)
+            {
+                <button class="bcrl_button bcrl_dialog-display-button-entry"
+                        @onclick="ToggleIsMaximized">
+                    
+                    @if (DialogRecord.IsMaximized)
+                    {
+                        <IconRestore/>
+                    }
+                    else
+                    {
+                        <IconMaximize/>
+                    }
+                </button>
+            }
+            
+            <button class="bcrl_button bcrl_dialog-display-button-entry"
+                    @onclick="DispatchDisposeDialogRecordAction">
+                <IconClose/>
+            </button>
+        </div>
+    </div>
+
+    <div class="bcrl_dialog-display-body">
+        <CascadingValue Value="DialogRecord">
+            <DynamicComponent @key="DialogRecord.DialogKey"
+                              Type="DialogRecord.RendererType"
+                              Parameters="DialogRecord.Parameters"/>
+        </CascadingValue>
+    </div>
+</div>
