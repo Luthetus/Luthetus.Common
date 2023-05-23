@@ -17,7 +17,7 @@ public partial class DropdownDisplay : FluxorComponent
     public DropdownKey DropdownKey { get; set; } = null!;
     [Parameter, EditorRequired]
     public RenderFragment ChildContent { get; set; } = null!;
-    [Parameter, EditorRequired]
+    [Parameter]
     public DropdownPositionKind DropdownPositionKind { get; set; } = DropdownPositionKind.Vertical;
     [Parameter]
     public bool ShouldDisplayOutOfBoundsClickDisplay { get; set; } = true;
