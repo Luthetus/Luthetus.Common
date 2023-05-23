@@ -69,11 +69,11 @@ public partial class WatchWindowDisplay : FluxorComponent
 
         if (disposing)
         {
+            _disposed = true;
+
             TreeViewService.DisposeTreeViewState(
                 WatchWindowDisplayTreeViewStateKey);
         }
-
-        _disposed = true;
 
         base.Dispose(disposing);
     }

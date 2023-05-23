@@ -24,6 +24,8 @@ public partial class DropdownDisplay : FluxorComponent
     [Parameter]
     public string CssStyleString { get; set; } = string.Empty;
 
+    private bool _disposed;
+
     private bool ShouldDisplay => DropdownStatesWrap.Value.ActiveDropdownKeys
         .Contains(DropdownKey);
 
@@ -42,13 +44,20 @@ public partial class DropdownDisplay : FluxorComponent
 
     protected override void Dispose(bool disposing)
     {
+        if (_disposed)
+        {
+            return;
+        }
+
         if (disposing)
         {
+            _disposed = true;
+
             if (ShouldDisplay)
                 Dispatcher.Dispatch(new DropdownsState.RemoveActiveAction(DropdownKey));
         }
 
-        base.Dispose(true);
+        base.Dispose(disposing);
     }
 }
 
