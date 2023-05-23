@@ -2,8 +2,6 @@
 using Fluxor;
 using Fluxor.Blazor.Web.Components;
 using Microsoft.AspNetCore.Components;
-using Luthetus.Common.RazorLib.Dropdown;
-using Luthetus.Common.RazorLib.Store.DropdownCase;
 
 namespace Luthetus.Common.RazorLib.Notification;
 
