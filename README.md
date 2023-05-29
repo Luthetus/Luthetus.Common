@@ -3,7 +3,7 @@
 ![Example GIF](/Media/Gifs/root-readme-gif.gif)
 
 ## Demo:
-https://luthetus.github.io/
+https://luthetus.github.io/Luthetus.Website/
 
 ***BlazorCommon*** is a general case component library using
 the [Blazor UI Framework](https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor)
