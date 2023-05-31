@@ -10,4 +10,5 @@ public interface ILuthetusCommonComponentRenderers
     public Type? TreeViewExceptionRendererType { get; }
     public Type? TreeViewMissingRendererFallbackType { get; }
     public IWatchWindowTreeViewRenderers? WatchWindowTreeViewRenderers { get; }
+    public Type? RunFileDisplayRenderer { get; }
 }
