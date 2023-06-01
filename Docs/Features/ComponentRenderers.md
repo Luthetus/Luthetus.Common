@@ -24,7 +24,7 @@ Perhaps one wants to render a Counter. Then a property on that interface might b
 
 The downstream `Razor Class Library` which is referencing the `Class Library` will then set the `CounterDisplayRendererType` property using dependency injection.
 
-Lastly, [DynamicComponent](https://learn.microsoft.com/en-us/aspnet/core/blazor/components/dynamiccomponent?view=aspnetcore-7.0) is a built in component for Blazor. It takes a `Type` which (*TODO: THIS STATEMENT FACT CHECKING*)  must inherit from IComponent.
+Lastly, [DynamicComponent](https://learn.microsoft.com/en-us/aspnet/core/blazor/components/dynamiccomponent?view=aspnetcore-7.0) is a built in component for Blazor. It takes a `Type` which (*TODO: FACT CHECK THIS*)  must inherit from IComponent.
 
 ---
 
