@@ -16,7 +16,7 @@ TODO: Not started writing this yet.
 ---
 
 ## Intent
-TODO: Not started writing this yet.
+For storing things like font-size in local storage.
 
 ---
 

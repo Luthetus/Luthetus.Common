@@ -16,7 +16,9 @@ TODO: Not started writing this yet.
 ---
 
 ## Intent
-TODO: Not started writing this yet.
+Luthetus.Common has various settings for font-size, font-family, etc...
+
+This folder contains pre-made html input elements to modify these values.
 
 ---
 

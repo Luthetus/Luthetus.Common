@@ -16,7 +16,7 @@ TODO: Not started writing this yet.
 ---
 
 ## Intent
-TODO: Not started writing this yet.
+Track the amount of times a Blazor component renders.
 
 ---
 
