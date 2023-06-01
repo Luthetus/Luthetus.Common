@@ -1,6 +1,6 @@
 # BlazorCommon
 
-![Example GIF](/Media/Gifs/root-readme-gif.gif)
+![Example GIF](./Images/Gifs/root-readme-gif.gif)
 
 ## Demo:
 https://luthetus.github.io/Luthetus.Website/
