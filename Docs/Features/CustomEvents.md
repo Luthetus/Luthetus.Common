@@ -16,7 +16,11 @@ TODO: Not started writing this yet.
 ---
 
 ## Intent
-TODO: Not started writing this yet.
+Similar to the `@onclick` Blazor event, one can define their own custom Blazor events.
+
+In [luthetusCommon.js (src link)](../../Source/Lib/Luthetus.Common.RazorLib/wwwroot/luthetusCommon.js): `Blazor.registerCustomEventType('keydownwithpreventscroll', ...`
+
+As well in [EventHandlers.cs (src link)](../../Source/Lib/Luthetus.Common.RazorLib/CustomEvents/EventHandlers.cs)
 
 ---
 

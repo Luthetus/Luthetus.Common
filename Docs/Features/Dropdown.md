@@ -16,7 +16,9 @@ TODO: Not started writing this yet.
 ---
 
 ## Intent
-TODO: Not started writing this yet.
+This works as a typical Dropdown one might expect.
+
+It also is used for rendering the ContextMenu.
 
 ---
 

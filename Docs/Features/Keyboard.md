@@ -16,7 +16,9 @@ TODO: Not started writing this yet.
 ---
 
 ## Intent
-TODO: Not started writing this yet.
+This contains a lot of constants related to keyboard events.
+
+This file bothers me. I can't recall the exact reasoning, I need to take another look at this file.
 
 ---
 

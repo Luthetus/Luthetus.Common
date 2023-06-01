@@ -16,7 +16,7 @@ TODO: Not started writing this yet.
 ---
 
 ## Intent
-TODO: Not started writing this yet.
+Provide an operating system 'application window' like experience by leveraging the built in Blazor component: [DynamicComponent](https://learn.microsoft.com/en-us/aspnet/core/blazor/components/dynamiccomponent?view=aspnetcore-7.0).
 
 ---
 

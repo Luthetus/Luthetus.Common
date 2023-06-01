@@ -16,7 +16,7 @@ TODO: Not started writing this yet.
 ---
 
 ## Intent
-TODO: Not started writing this yet.
+A variety of data type which are used for JavaScript Interop are defined here.
 
 ---
 
