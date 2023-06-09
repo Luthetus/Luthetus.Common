@@ -1,6 +1,7 @@
 using Fluxor;
+using Luthetus.Common.RazorLib.BackgroundTaskCase.Usage;
 
-namespace Luthetus.Common.RazorLib.BackgroundTaskCase;
+namespace Luthetus.Common.RazorLib.BackgroundTaskCase.BaseTypes;
 
 public class BackgroundTask : IBackgroundTask
 {
@@ -53,7 +54,7 @@ public class BackgroundTask : IBackgroundTask
     public Task? WorkProgress { get; private set; }
     public Func<CancellationToken, Task> CancelFunc { get; }
     /// <summary>
-    /// The <see cref="QueuedHostedService"/> is a singleton, yet the IDispatcher is a
+    /// The <see cref="CommonQueuedHostedService"/> is a singleton, yet the IDispatcher is a
     /// scoped service. Therefore it must be passed in so the singleton can
     /// respond to the correct scope with a notification on the UI that the task is completed.
     /// </summary>

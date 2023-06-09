@@ -1,28 +1,28 @@
 ﻿using Fluxor;
 using Luthetus.Common.RazorLib.Store.TreeViewCase;
-using Luthetus.Common.RazorLib.BackgroundTaskCase;
 using Luthetus.Common.RazorLib.ComponentRenderers;
 using Luthetus.Common.RazorLib.TreeView.TreeViewClasses;
+using Luthetus.Common.RazorLib.BackgroundTaskCase.Usage;
 
 namespace Luthetus.Common.RazorLib.TreeView;
 
 public class TreeViewService : ITreeViewService
 {
     private readonly IDispatcher _dispatcher;
-    private readonly IBackgroundTaskQueue _backgroundTaskQueue;
+    private readonly ICommonBackgroundTaskMonitor _commonBackgroundTaskQueue;
     private readonly ILuthetusCommonComponentRenderers _luthetusCommonComponentRenderers;
 
     public TreeViewService(
         bool isEnabled,
         IState<TreeViewStateContainer> treeViewStateContainerWrap,
         IDispatcher dispatcher,
-        IBackgroundTaskQueue backgroundTaskQueue,
+        ICommonBackgroundTaskMonitor commonBackgroundTaskQueue,
         ILuthetusCommonComponentRenderers luthetusCommonComponentRenderers)
     {
         IsEnabled = isEnabled;
         TreeViewStateContainerWrap = treeViewStateContainerWrap;
         _dispatcher = dispatcher;
-        _backgroundTaskQueue = backgroundTaskQueue;
+        _commonBackgroundTaskQueue = commonBackgroundTaskQueue;
         _luthetusCommonComponentRenderers = luthetusCommonComponentRenderers;
     }
 
@@ -179,7 +179,7 @@ public class TreeViewService : ITreeViewService
             shiftKey,
             treeViewNoType =>
             {
-                // IBackgroundTaskQueue does not work well here because
+                // ICommonBackgroundTaskQueue does not work well here because
                 // this Task does not need to be tracked.
                 _ = Task.Run(async () =>
                 {

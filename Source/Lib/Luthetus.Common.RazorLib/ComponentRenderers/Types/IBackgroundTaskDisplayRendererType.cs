@@ -1,4 +1,4 @@
-﻿using Luthetus.Common.RazorLib.BackgroundTaskCase;
+﻿using Luthetus.Common.RazorLib.BackgroundTaskCase.BaseTypes;
 
 namespace Luthetus.Common.RazorLib.ComponentRenderers.Types;
 

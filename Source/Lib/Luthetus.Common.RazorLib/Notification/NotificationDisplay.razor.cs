@@ -62,7 +62,7 @@ public partial class NotificationDisplay : ComponentBase, IDisposable
 
             if (notificationRecord.NotificationOverlayLifespan is not null)
             {
-                // IBackgroundTaskQueue does not work well here because
+                // ICommonBackgroundTaskQueue does not work well here because
                 // this Task does not need to be tracked.
                 _ = Task.Run(async () =>
                 {

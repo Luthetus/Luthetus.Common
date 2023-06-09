@@ -1,6 +1,6 @@
 using Fluxor;
 
-namespace Luthetus.Common.RazorLib.BackgroundTaskCase;
+namespace Luthetus.Common.RazorLib.BackgroundTaskCase.BaseTypes;
 
 public interface IBackgroundTask
 {

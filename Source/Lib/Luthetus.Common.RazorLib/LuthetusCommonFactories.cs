@@ -6,7 +6,6 @@ using Luthetus.Common.RazorLib.Store.DropdownCase;
 using Luthetus.Common.RazorLib.Store.NotificationCase;
 using Luthetus.Common.RazorLib.Store.ThemeCase;
 using Luthetus.Common.RazorLib.Store.TreeViewCase;
-using Luthetus.Common.RazorLib.BackgroundTaskCase;
 using Luthetus.Common.RazorLib.Clipboard;
 using Luthetus.Common.RazorLib.ComponentRenderers;
 using Luthetus.Common.RazorLib.Dialog;
@@ -18,6 +17,7 @@ using Luthetus.Common.RazorLib.Theme;
 using Luthetus.Common.RazorLib.TreeView;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.JSInterop;
+using Luthetus.Common.RazorLib.BackgroundTaskCase.Usage;
 
 namespace Luthetus.Common.RazorLib;
 
@@ -73,6 +73,6 @@ public record LuthetusCommonFactories
             true,
             serviceProvider.GetRequiredService<IState<TreeViewStateContainer>>(),
             serviceProvider.GetRequiredService<IDispatcher>(),
-            serviceProvider.GetRequiredService<IBackgroundTaskQueue>(),
+            serviceProvider.GetRequiredService<ICommonBackgroundTaskMonitor>(),
     serviceProvider.GetRequiredService<ILuthetusCommonComponentRenderers>());
 }
