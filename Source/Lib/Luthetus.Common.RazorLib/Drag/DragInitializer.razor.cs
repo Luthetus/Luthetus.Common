@@ -3,6 +3,7 @@ using Fluxor;
 using Fluxor.Blazor.Web.Components;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using Luthetus.Common.RazorLib.Reactive;
 
 namespace Luthetus.Common.RazorLib.Drag;
 
@@ -17,23 +18,31 @@ public partial class DragInitializer : FluxorComponent
         ? string.Empty
         : "display: none;";
 
+    private IThrottle _throttleDispatchSetDragStateActionOnMouseMove = new Throttle(IThrottle.DefaultThrottleTimeSpan);
+
     private DragState.SetDragStateAction ConstructClearDragStateAction() =>
         new DragState.SetDragStateAction(false, null);
 
-    private void DispatchSetDragStateActionOnMouseMove(MouseEventArgs mouseEventArgs)
+    private async Task DispatchSetDragStateActionOnMouseMoveAsync(MouseEventArgs mouseEventArgs)
     {
-        if ((mouseEventArgs.Buttons & 1) != 1)
+        await _throttleDispatchSetDragStateActionOnMouseMove.FireAsync(async () =>
         {
-            Dispatcher.Dispatch(ConstructClearDragStateAction());
-        }
-        else
-        {
-            Dispatcher.Dispatch(new DragState.SetDragStateAction(true, mouseEventArgs));
-        }
+            if ((mouseEventArgs.Buttons & 1) != 1)
+            {
+                Dispatcher.Dispatch(ConstructClearDragStateAction());
+            }
+            else
+            {
+                Dispatcher.Dispatch(new DragState.SetDragStateAction(true, mouseEventArgs));
+            }
+        });
     }
 
-    private void DispatchSetDragStateActionOnMouseUp()
+    private async Task DispatchSetDragStateActionOnMouseUpAsync()
     {
-        Dispatcher.Dispatch(ConstructClearDragStateAction());
+        await _throttleDispatchSetDragStateActionOnMouseMove.FireAsync(async () =>
+        {
+            Dispatcher.Dispatch(ConstructClearDragStateAction());
+        });
     }
 }

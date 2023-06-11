@@ -2,6 +2,8 @@
 
 public interface IThrottle : IDisposable
 {
+    public static readonly TimeSpan DefaultThrottleTimeSpan = TimeSpan.FromMilliseconds(100);
+
     /// <summary>
     /// The cancellation logic should be made internal to the workItem Func itself.
     /// </summary>
