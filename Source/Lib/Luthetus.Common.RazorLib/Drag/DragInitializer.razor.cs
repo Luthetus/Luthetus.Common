@@ -3,6 +3,7 @@ using Fluxor;
 using Fluxor.Blazor.Web.Components;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using Luthetus.Common.RazorLib.Reactive;
 
 namespace Luthetus.Common.RazorLib.Drag;
 
@@ -17,23 +18,37 @@ public partial class DragInitializer : FluxorComponent
         ? string.Empty
         : "display: none;";
 
+    /// <summary>
+    /// Preferably the throttling logic here would be moved out of the drag initializer itself so one can choose to add it themselves, or take the full stream.
+    /// </summary>
+    private IThrottle _throttleDispatchSetDragStateActionOnMouseMove = new Throttle(IThrottle.DefaultThrottleTimeSpan);
+
     private DragState.SetDragStateAction ConstructClearDragStateAction() =>
         new DragState.SetDragStateAction(false, null);
 
-    private void DispatchSetDragStateActionOnMouseMove(MouseEventArgs mouseEventArgs)
+    private async Task DispatchSetDragStateActionOnMouseMoveAsync(MouseEventArgs mouseEventArgs)
     {
-        if ((mouseEventArgs.Buttons & 1) != 1)
+        await _throttleDispatchSetDragStateActionOnMouseMove.FireAsync(() =>
         {
-            Dispatcher.Dispatch(ConstructClearDragStateAction());
-        }
-        else
-        {
-            Dispatcher.Dispatch(new DragState.SetDragStateAction(true, mouseEventArgs));
-        }
+            if ((mouseEventArgs.Buttons & 1) != 1)
+            {
+                Dispatcher.Dispatch(ConstructClearDragStateAction());
+            }
+            else
+            {
+                Dispatcher.Dispatch(new DragState.SetDragStateAction(true, mouseEventArgs));
+            }
+
+            return Task.CompletedTask;
+        });
     }
 
-    private void DispatchSetDragStateActionOnMouseUp()
+    private async Task DispatchSetDragStateActionOnMouseUpAsync()
     {
-        Dispatcher.Dispatch(ConstructClearDragStateAction());
+        await _throttleDispatchSetDragStateActionOnMouseMove.FireAsync(() =>
+        {
+            Dispatcher.Dispatch(ConstructClearDragStateAction());
+            return Task.CompletedTask;
+        });
     }
 }
