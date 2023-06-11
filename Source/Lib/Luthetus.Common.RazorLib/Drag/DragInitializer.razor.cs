@@ -18,6 +18,9 @@ public partial class DragInitializer : FluxorComponent
         ? string.Empty
         : "display: none;";
 
+    /// <summary>
+    /// Preferably the throttling logic here would be moved out of the drag initializer itself so one can choose to add it themselves, or take the full stream.
+    /// </summary>
     private IThrottle _throttleDispatchSetDragStateActionOnMouseMove = new Throttle(IThrottle.DefaultThrottleTimeSpan);
 
     private DragState.SetDragStateAction ConstructClearDragStateAction() =>
@@ -25,7 +28,7 @@ public partial class DragInitializer : FluxorComponent
 
     private async Task DispatchSetDragStateActionOnMouseMoveAsync(MouseEventArgs mouseEventArgs)
     {
-        await _throttleDispatchSetDragStateActionOnMouseMove.FireAsync(async () =>
+        await _throttleDispatchSetDragStateActionOnMouseMove.FireAsync(() =>
         {
             if ((mouseEventArgs.Buttons & 1) != 1)
             {
@@ -35,14 +38,17 @@ public partial class DragInitializer : FluxorComponent
             {
                 Dispatcher.Dispatch(new DragState.SetDragStateAction(true, mouseEventArgs));
             }
+
+            return Task.CompletedTask;
         });
     }
 
     private async Task DispatchSetDragStateActionOnMouseUpAsync()
     {
-        await _throttleDispatchSetDragStateActionOnMouseMove.FireAsync(async () =>
+        await _throttleDispatchSetDragStateActionOnMouseMove.FireAsync(() =>
         {
             Dispatcher.Dispatch(ConstructClearDragStateAction());
+            return Task.CompletedTask;
         });
     }
 }
