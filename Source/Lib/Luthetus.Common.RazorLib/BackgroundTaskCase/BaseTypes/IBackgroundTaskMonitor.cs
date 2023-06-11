@@ -1,4 +1,4 @@
-namespace Luthetus.Common.RazorLib.BackgroundTaskCase;
+namespace Luthetus.Common.RazorLib.BackgroundTaskCase.BaseTypes;
 
 public interface IBackgroundTaskMonitor
 {

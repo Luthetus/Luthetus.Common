@@ -2,14 +2,15 @@ using Luthetus.Common.RazorLib.Store.NotificationCase;
 using Luthetus.Common.RazorLib.ComponentRenderers;
 using Luthetus.Common.RazorLib.ComponentRenderers.Types;
 using Luthetus.Common.RazorLib.Notification;
+using Luthetus.Common.RazorLib.BackgroundTaskCase.BaseTypes;
 
-namespace Luthetus.Common.RazorLib.BackgroundTaskCase;
+namespace Luthetus.Common.RazorLib.BackgroundTaskCase.Usage;
 
-public class BackgroundTaskMonitor : IBackgroundTaskMonitor
+public class CommonBackgroundTaskMonitor : ICommonBackgroundTaskMonitor
 {
     private readonly ILuthetusCommonComponentRenderers _luthetusCommonComponentRenderers;
 
-    public BackgroundTaskMonitor(
+    public CommonBackgroundTaskMonitor(
         ILuthetusCommonComponentRenderers luthetusCommonComponentRenderers)
     {
         _luthetusCommonComponentRenderers = luthetusCommonComponentRenderers;

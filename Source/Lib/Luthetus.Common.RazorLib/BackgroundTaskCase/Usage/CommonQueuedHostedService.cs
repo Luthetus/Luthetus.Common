@@ -4,24 +4,25 @@ using Luthetus.Common.RazorLib.ComponentRenderers.Types;
 using Luthetus.Common.RazorLib.Notification;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Luthetus.Common.RazorLib.BackgroundTaskCase.BaseTypes;
 
-namespace Luthetus.Common.RazorLib.BackgroundTaskCase;
+namespace Luthetus.Common.RazorLib.BackgroundTaskCase.Usage;
 
-public class QueuedHostedService : BackgroundService
+public class CommonQueuedHostedService : BackgroundService
 {
     private readonly ILuthetusCommonComponentRenderers _luthetusCommonComponentRenderers;
     private readonly ILogger _logger;
 
-    public QueuedHostedService(
-        IBackgroundTaskQueue taskQueue,
-        IBackgroundTaskMonitor taskMonitor,
+    public CommonQueuedHostedService(
+        ICommonBackgroundTaskQueue taskQueue,
+        ICommonBackgroundTaskMonitor taskMonitor,
         ILuthetusCommonComponentRenderers luthetusCommonComponentRenderers,
         ILoggerFactory loggerFactory)
     {
         _luthetusCommonComponentRenderers = luthetusCommonComponentRenderers;
         TaskQueue = taskQueue;
         TaskMonitor = taskMonitor;
-        _logger = loggerFactory.CreateLogger<QueuedHostedService>();
+        _logger = loggerFactory.CreateLogger<CommonQueuedHostedService>();
     }
 
     public IBackgroundTaskQueue TaskQueue { get; }
