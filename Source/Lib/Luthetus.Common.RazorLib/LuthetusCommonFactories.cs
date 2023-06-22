@@ -74,5 +74,5 @@ public record LuthetusCommonFactories
             serviceProvider.GetRequiredService<IState<TreeViewStateContainer>>(),
             serviceProvider.GetRequiredService<IDispatcher>(),
             serviceProvider.GetRequiredService<ICommonBackgroundTaskMonitor>(),
-    serviceProvider.GetRequiredService<ILuthetusCommonComponentRenderers>());
+            serviceProvider.GetRequiredService<ILuthetusCommonComponentRenderers>());
 }
