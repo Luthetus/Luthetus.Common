@@ -39,10 +39,6 @@ public static class ServiceCollectionExtensions
             .AddScoped(serviceProvider =>
                 luthetusCommonOptions.LuthetusCommonFactories.TreeViewServiceFactory.Invoke(serviceProvider));
 
-        services.AddFluxor(options =>
-            options.ScanAssemblies(
-                typeof(ServiceCollectionExtensions).Assembly));
-
         return services;
     }
 }
