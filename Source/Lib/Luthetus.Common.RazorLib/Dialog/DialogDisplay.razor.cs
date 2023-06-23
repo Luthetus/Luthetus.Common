@@ -13,6 +13,8 @@ public partial class DialogDisplay : IDisposable
     private IDialogService DialogService { get; set; } = null!;
     [Inject]
     private IState<AppOptionsState> AppOptionsStateWrap { get; set; } = null!;
+    [Inject]
+    private LuthetusCommonOptions LuthetusCommonOptions { get; set; } = null!;
 
     [Parameter]
     public DialogRecord DialogRecord { get; set; } = null!;
@@ -23,7 +25,7 @@ public partial class DialogDisplay : IDisposable
 
     private string ElementDimensionsStyleCssString => DialogRecord.ElementDimensions.StyleString;
     private string IsMaximizedStyleCssString => DialogRecord.IsMaximized
-        ? "width: 100vw; height: 100vh; left: 0; top: 0;"
+        ? LuthetusCommonOptions.DialogServiceOptions.IsMaximizedStyleCssString
         : string.Empty;
 
     private string IconSizeInPixelsCssValue =>
