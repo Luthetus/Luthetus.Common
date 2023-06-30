@@ -1,5 +1,4 @@
-﻿using Fluxor;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace Luthetus.Common.RazorLib;
 
@@ -38,13 +37,6 @@ public static class ServiceCollectionExtensions
                 luthetusCommonOptions.LuthetusCommonFactories.ThemeServiceFactory.Invoke(serviceProvider))
             .AddScoped(serviceProvider =>
                 luthetusCommonOptions.LuthetusCommonFactories.TreeViewServiceFactory.Invoke(serviceProvider));
-
-        if (luthetusCommonOptions.InitializeFluxor)
-        {
-            services.AddFluxor(options =>
-                options.ScanAssemblies(
-                    typeof(ServiceCollectionExtensions).Assembly));
-        }
 
         return services;
     }
