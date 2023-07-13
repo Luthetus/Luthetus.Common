@@ -11,7 +11,8 @@ public class LuthetusCommonComponentRenderers : ILuthetusCommonComponentRenderer
         Type? treeViewExceptionRendererType,
         Type? treeViewMissingRendererFallbackType,
         IWatchWindowTreeViewRenderers? watchWindowTreeViewRenderers,
-        Type? runFileDisplayRenderer)
+        Type? runFileDisplayRenderer,
+        Type? compilerServiceBackgroundTaskDisplayRendererType)
     {
         BackgroundTaskDisplayRendererType = backgroundTaskDisplayRendererType;
         ErrorNotificationRendererType = errorNotificationRendererType;
@@ -20,6 +21,7 @@ public class LuthetusCommonComponentRenderers : ILuthetusCommonComponentRenderer
         TreeViewMissingRendererFallbackType = treeViewMissingRendererFallbackType;
         WatchWindowTreeViewRenderers = watchWindowTreeViewRenderers;
         RunFileDisplayRenderer = runFileDisplayRenderer;
+        CompilerServiceBackgroundTaskDisplayRendererType = compilerServiceBackgroundTaskDisplayRendererType;
     }
 
     public Type? BackgroundTaskDisplayRendererType { get; }
@@ -29,4 +31,5 @@ public class LuthetusCommonComponentRenderers : ILuthetusCommonComponentRenderer
     public Type? TreeViewMissingRendererFallbackType { get; }
     public IWatchWindowTreeViewRenderers? WatchWindowTreeViewRenderers { get; }
     public Type? RunFileDisplayRenderer { get; }
+    public Type? CompilerServiceBackgroundTaskDisplayRendererType { get; }
 }
